@@ -153,6 +153,9 @@ export default function NavigationV2() {
           </div>
           
           <div className="p-3 space-y-2">
+            <div className="flex items-center justify-center">
+              <ThemeSwitcher />
+            </div>
             <motion.a
               href="/Resume - Leo Alcaraz Jr.pdf"
               download

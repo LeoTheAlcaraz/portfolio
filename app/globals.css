@@ -324,22 +324,30 @@ html.theme-switching *::after {
 }
 
 /* Custom Cursor Styles */
-html,
-body,
-button,
-a,
-[role="button"],
-input,
-textarea,
-select,
-summary,
-label,
-[data-cursor="interactive"] {
-  cursor: none !important;
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  button,
+  a,
+  [role="button"],
+  input,
+  textarea,
+  select,
+  summary,
+  label,
+  [data-cursor="interactive"] {
+    cursor: none !important;
+  }
+
+  input,
+  textarea,
+  select {
+    cursor: text;
+  }
 }
 
-input,
-textarea,
-select {
-  cursor: text;
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
 }

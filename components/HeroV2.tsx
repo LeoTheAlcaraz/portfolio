@@ -519,7 +519,7 @@ export default function HeroV2() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[#111111]/55 px-4 py-6 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#111111]/55 px-3 py-3 backdrop-blur-md sm:items-center sm:px-4 sm:py-6"
             onClick={() => setCertificatesOpen(false)}
           >
             <motion.div
@@ -528,13 +528,13 @@ export default function HeroV2() {
               exit={{ opacity: 0, y: 12, scale: 0.98 }}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               onClick={(event) => event.stopPropagation()}
-              className="relative w-full max-w-6xl overflow-hidden rounded-[28px] border border-white/30 bg-white/90 shadow-[0_30px_80px_rgba(0,0,0,0.24)] dark:bg-[#121212]/95"
+              className="relative w-full max-w-6xl max-h-[calc(100dvh-1.5rem)] overflow-y-auto overscroll-contain rounded-[22px] border border-white/30 bg-white/90 shadow-[0_30px_80px_rgba(0,0,0,0.24)] dark:bg-[#121212]/95 sm:rounded-[28px]"
             >
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(107,91,149,0.12),_transparent_36%),radial-gradient(circle_at_bottom_right,_rgba(74,155,142,0.12),_transparent_30%)]" />
 
               <div className="relative grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
-                <div className="p-6 sm:p-8 lg:p-10">
-                  <div className="mb-6 flex items-start justify-between gap-4">
+                <div className="p-5 sm:p-8 lg:p-10">
+                  <div className="sticky top-0 z-10 -mx-5 mb-6 flex items-start justify-between gap-4 border-b border-[#d6d3cd]/70 bg-white/90 px-5 pb-4 pt-1 backdrop-blur-sm sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:px-0 sm:pb-0 sm:pt-0 dark:border-[#3a3a3a]/70 dark:bg-[#121212]/90 sm:dark:bg-transparent">
                     <div>
                       <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#d6d3cd] bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#5f5f5f] dark:border-[#3a3a3a] dark:bg-[#1a1a1a] dark:text-[#a0a0a0]">
                         <Sparkles size={14} />
@@ -551,7 +551,7 @@ export default function HeroV2() {
                     <button
                       type="button"
                       onClick={() => setCertificatesOpen(false)}
-                      className="rounded-full border border-[#d6d3cd] bg-white p-3 text-[#111111] transition-colors hover:bg-[#fafaf8] dark:border-[#3a3a3a] dark:bg-[#1a1a1a] dark:text-[#f5f5f0]"
+                      className="shrink-0 rounded-full border border-[#d6d3cd] bg-white p-3 text-[#111111] transition-colors hover:bg-[#fafaf8] dark:border-[#3a3a3a] dark:bg-[#1a1a1a] dark:text-[#f5f5f0]"
                       aria-label="Close certificates gallery"
                     >
                       <X size={18} />
@@ -603,7 +603,7 @@ export default function HeroV2() {
                   </div>
                 </div>
 
-                <div className="border-t border-[#d6d3cd] bg-white/70 p-6 sm:p-8 lg:border-t-0 lg:border-l dark:border-[#3a3a3a] dark:bg-[#1a1a1a]/70">
+                <div className="border-t border-[#d6d3cd] bg-white/70 p-5 sm:p-8 lg:border-t-0 lg:border-l dark:border-[#3a3a3a] dark:bg-[#1a1a1a]/70">
                   <div className="mb-4 flex items-center justify-between gap-3">
                     <h3 className="text-lg font-semibold text-[#111111] dark:text-[#f5f5f0]">Featured gallery</h3>
                     <span className="rounded-full bg-[#6b5b95]/10 px-3 py-1 text-xs font-semibold text-[#6b5b95] dark:bg-[#6b5b95]/20">
@@ -611,7 +611,7 @@ export default function HeroV2() {
                     </span>
                   </div>
 
-                  <div className="max-h-[65vh] space-y-3 overflow-y-auto pr-1 hide-scrollbar">
+                  <div className="max-h-[45vh] space-y-3 overflow-y-auto pr-1 hide-scrollbar sm:max-h-[65vh]">
                     {certificates.map((certificate) => {
                       const isActive = certificate.image === activeCertificate.image
 
